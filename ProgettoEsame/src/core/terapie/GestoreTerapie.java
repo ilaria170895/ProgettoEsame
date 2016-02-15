@@ -1,4 +1,4 @@
-package terapie;
+package core.terapie;
 
 import java.sql.Date;
 import java.util.*;
@@ -8,11 +8,7 @@ import java.util.*;
  */
 public class GestoreTerapie implements IGestoreTerapie {
 
-    /**
-     * 
-     */
-    public GestoreTerapie() {
-    }
+
 
     /**
      * 
@@ -24,14 +20,16 @@ public class GestoreTerapie implements IGestoreTerapie {
      * @return
      */
     public GestoreTerapie getinstance() {
-        // TODO implement here
-        return null;
+       if(this.instance==null) {
+    	   this.instance=new GestoreTerapie();
+       }
+       return this.instance;       
     }
 
     /**
      * 
      */
-    protected void GestoreTerapie() {
+    protected GestoreTerapie() {
         // TODO implement here
     }
 
@@ -43,7 +41,7 @@ public class GestoreTerapie implements IGestoreTerapie {
 	}
 
 	@Override
-	public Terapia VisualizzaListaTerapie(java.util.Date di, java.util.Date df) {
+	public ArrayList<Terapia> VisualizzaListaTerapie(java.util.Date di, java.util.Date df) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -1,4 +1,4 @@
-package terapie;
+package core.terapie;
 
 import java.util.*;
 
@@ -12,7 +12,7 @@ public interface IGestoreTerapie {
      * @param df 
      * @return
      */
-    public Terapia VisualizzaListaTerapie(Date di, Date df);
+    public ArrayList<Terapia> VisualizzaListaTerapie(Date di, Date df);
 
     /**
      * @param t

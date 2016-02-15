@@ -1,4 +1,4 @@
-package infermieri;
+package core.infermieri;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package paziente;
+package core.paziente;
 
 import java.util.*;
 

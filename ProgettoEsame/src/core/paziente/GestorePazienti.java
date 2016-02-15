@@ -1,4 +1,4 @@
-package paziente;
+package core.paziente;
 
 import java.util.*;
 
@@ -7,11 +7,6 @@ import java.util.*;
  */
 public class GestorePazienti implements IGestorePazienti {
 
-    /**
-     * 
-     */
-    public GestorePazienti() {
-    }
 
     /**
      * 
@@ -23,14 +18,16 @@ public class GestorePazienti implements IGestorePazienti {
      * @return
      */
     public GestorePazienti getinstance() {
-        // TODO implement here
-        return null;
+        if(this.instance==null) {
+        	this.instance=new GestorePazienti();
+        }
+        return instance;
     }
 
-    /**
+	/**
      * 
      */
-    protected void GestorePazienti() {
+    protected GestorePazienti() {
         // TODO implement here
     }
 

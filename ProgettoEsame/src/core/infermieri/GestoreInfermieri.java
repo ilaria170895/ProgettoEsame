@@ -1,4 +1,4 @@
-package infermieri;
+package core.infermieri;
 
 import java.util.*;
 
@@ -6,12 +6,6 @@ import java.util.*;
  * 
  */
 public class GestoreInfermieri implements IGestoreInfermieri {
-
-    /**
-     * 
-     */
-    public GestoreInfermieri() {
-    }
 
     /**
      * 
@@ -24,14 +18,16 @@ public class GestoreInfermieri implements IGestoreInfermieri {
      * @return
      */
     public GestoreInfermieri getinstance() {
-        // TODO implement here
-        return null;
+        if(this.instance==null) {
+        	this.instance= new GestoreInfermieri();
+        }
+        return this.instance;
     }
 
     /**
      * 
      */
-    protected void GestoreInfermieri() {
+    protected GestoreInfermieri() {
         // TODO implement here
     }
 
@@ -46,5 +42,6 @@ public class GestoreInfermieri implements IGestoreInfermieri {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 }
