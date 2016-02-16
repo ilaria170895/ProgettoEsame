@@ -7,11 +7,14 @@ import java.util.*;
  */
 public class Infermiere {
 
-	public Infermiere(String nome, String cognome, String codiceFiscale, String numeroCellulare) {
+	private String Indirizzo;
+
+	public Infermiere(String nome, String cognome, String codiceFiscale, String indirizzo,String numeroCellulare) {
 		super();
 		Nome = nome;
 		Cognome = cognome;
 		CodiceFiscale = codiceFiscale;
+		Indirizzo=indirizzo;
 		NumeroCellulare = numeroCellulare;
 	}
 
@@ -64,13 +67,25 @@ public class Infermiere {
 		NumeroCellulare = numeroCellulare;
 	}
 
+	public String getIndirizzo() {
+		return Indirizzo;
+	}
+
+	public void setIndirizzo(String indirizzo) {
+		Indirizzo = indirizzo;
+	}
+
 	/**
      * 
      */
     public Infermiere() {
     }
 
-    /**
+    public Infermiere(String cFInfermiere) {
+		this.CodiceFiscale=cFInfermiere;
+	}
+
+	/**
      * 
      */
     private String Nome;
