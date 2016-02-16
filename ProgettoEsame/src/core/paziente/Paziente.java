@@ -116,4 +116,10 @@ public class Paziente {
         this.Domicilio=Dom;
     }
 
+
+
+	public Paziente(String id) {
+		this.CodFiscale=id;
+	}
+
 }
