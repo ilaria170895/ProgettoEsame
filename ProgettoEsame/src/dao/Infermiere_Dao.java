@@ -57,7 +57,7 @@ public class Infermiere_Dao {
 		ResultSet rs= preparedStatement.executeQuery();
 		if(rs.first()){
 			if (!rs.wasNull()){
-					infermiere=new Infermiere(rs.getString("CODFInfermiere"),rs.getString("Nome"),
+					infermiere=new Infermiere(rs.getString("CODF"),rs.getString("Nome"),
 							rs.getString("Cognome"),rs.getString("Indirizzo"),rs.getString("Cellulare"));
 				restoredObjects.put(CODFInfermiere, infermiere);
 			}

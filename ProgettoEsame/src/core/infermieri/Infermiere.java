@@ -9,7 +9,7 @@ public class Infermiere {
 
 	private String Indirizzo;
 
-	public Infermiere(String nome, String cognome, String codiceFiscale, String indirizzo,String numeroCellulare) {
+	public Infermiere( String codiceFiscale,String nome, String cognome, String indirizzo,String numeroCellulare) {
 		super();
 		Nome = nome;
 		Cognome = cognome;

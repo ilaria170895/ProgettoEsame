@@ -1,7 +1,13 @@
 package core.terapie;
 
 import java.sql.Date;
+import java.sql.SQLException;
 import java.util.*;
+
+import core.exception.InfermiereNotFound;
+import core.exception.PazienteNotFound;
+import core.exception.TerapiaNotFound;
+import dao.Terapia_Dao;
 
 /**
  * 
@@ -13,17 +19,17 @@ public class GestoreTerapie implements IGestoreTerapie {
     /**
      * 
      */
-    private GestoreTerapie instance;
+    private static GestoreTerapie instance;
 
 
     /**
      * @return
      */
-    public GestoreTerapie getinstance() {
-       if(this.instance==null) {
-    	   this.instance=new GestoreTerapie();
+    public static GestoreTerapie getinstance() {
+       if(instance==null) {
+    	   GestoreTerapie.instance=new GestoreTerapie();
        }
-       return this.instance;       
+       return GestoreTerapie.instance;       
     }
 
     /**
@@ -41,9 +47,23 @@ public class GestoreTerapie implements IGestoreTerapie {
 	}
 
 	@Override
-	public ArrayList<Terapia> VisualizzaListaTerapie(java.util.Date di, java.util.Date df) {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Terapia> VisualizzaListaTerapie(java.util.Date di, java.util.Date df) throws TerapiaNotFound, PazienteNotFound, InfermiereNotFound {
+		ArrayList<Terapia> listaterapie=new ArrayList<Terapia>();
+		try{
+			ArrayList<Terapia> totaleterapie=Terapia_Dao.readall();
+			for(int i=0;i<totaleterapie.size();i++){
+				if(totaleterapie.get(i).getDataInizio().equals(di)&&totaleterapie.get(i).getDataFine().equals(df)){
+					listaterapie.add(totaleterapie.get(i));
+				}
+			}
+			
+		} catch (SQLException e) {
+			System.err.println(e.getMessage());
+			e.printStackTrace();
+			System.err.println("Errore nel recupero dei Dati");
+			System.exit(-1);
+		}
+		return listaterapie;
 	}
 
 }

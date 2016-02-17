@@ -2,6 +2,8 @@ package core.paziente;
 
 import java.util.*;
 
+import core.infermieri.Infermiere;
+
 /**
  * 
  */
@@ -108,7 +110,7 @@ public class Paziente {
      * @param CF 
      * @param Dom
      */
-    public Paziente(String n, String c, String CF, String Dom) {
+    public Paziente(String CF,String n, String c,String Dom) {
         super();
         this.Nome=n;
         this.Cognome=c;

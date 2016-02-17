@@ -93,7 +93,17 @@ public class Terapia {
 		this.DataInizio = DI;
 		this.DataFine = DF;
 		this.paziente = P;
+		this.infermieri=new ArrayList<Infermiere>();
 		this.infermieri.add(I);
+    }
+    public Terapia(Integer Id,String De, Date DI, Date DF, Paziente P) {
+    	super();
+    	this.ID_Terapia=Id;
+		this.Descrizione = De;
+		this.DataInizio = DI;
+		this.DataFine = DF;
+		this.paziente = P;
+		this.infermieri=new ArrayList<Infermiere>();
     }
 	/**
      * 
@@ -101,7 +111,11 @@ public class Terapia {
     public Terapia() {
     }
 
-    /**
+    public Terapia(Integer iDTerapia) {
+		this.ID_Terapia=iDTerapia;
+	}
+
+	/**
      * 
      */
     private String Descrizione;
@@ -119,4 +133,8 @@ public class Terapia {
     private Paziente paziente;
     private ArrayList <Infermiere> infermieri;
     private Integer ID_Terapia;
+	public void aggiungiInfermiere(Infermiere inferm) {
+		this.infermieri.add(inferm);
+		
+	}
 }

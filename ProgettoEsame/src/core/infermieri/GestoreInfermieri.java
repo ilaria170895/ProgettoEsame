@@ -10,18 +10,18 @@ public class GestoreInfermieri implements IGestoreInfermieri {
     /**
      * 
      */
-    private GestoreInfermieri instance;
+    private static GestoreInfermieri instance;
 
 
 
     /**
      * @return
      */
-    public GestoreInfermieri getinstance() {
-        if(this.instance==null) {
-        	this.instance= new GestoreInfermieri();
+    public static GestoreInfermieri getinstance() {
+        if(instance==null) {
+        	GestoreInfermieri.instance= new GestoreInfermieri();
         }
-        return this.instance;
+        return GestoreInfermieri.instance;
     }
 
     /**

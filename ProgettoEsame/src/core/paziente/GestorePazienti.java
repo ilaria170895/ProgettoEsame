@@ -11,17 +11,17 @@ public class GestorePazienti implements IGestorePazienti {
     /**
      * 
      */
-    private GestorePazienti instance;
+    private static GestorePazienti instance;
 
 
     /**
      * @return
      */
-    public GestorePazienti getinstance() {
-        if(this.instance==null) {
-        	this.instance=new GestorePazienti();
+    public static GestorePazienti getinstance() {
+        if(instance==null) {
+        	GestorePazienti.instance=new GestorePazienti();
         }
-        return instance;
+        return GestorePazienti.instance;
     }
 
 	/**
@@ -33,8 +33,7 @@ public class GestorePazienti implements IGestorePazienti {
 
 	@Override
 	public void VisualizzaGeneralitaPaziente(Paziente p) {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Paziente Nome: "+p.getNome()+" Cognome: "+p.getCognome());
 	}
 
 	@Override

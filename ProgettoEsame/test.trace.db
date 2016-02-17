@@ -524,3 +524,125 @@ Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range:
 02-16 22:16:23 jdbc[5]: exception
 org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROMTERAPIA[*]"; SQL statement:
 SELECT * FROMTERAPIA [42000-187]
+02-17 22:09:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "USERS" not found; SQL statement:
+INSERT INTO users (username, password)
+  VALUES('test', 'test') [42102-187]
+02-17 22:09:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROFILES" not found; SQL statement:
+INSERT INTO profiles (userid, bio, homepage) 
+  VALUES(LAST_INSERT_ID(),'Hello world!', 'http://www.stackoverflow.com') [42102-187]
+02-17 23:43:51 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/ilaria/git/ProgettoEsame/ProgettoEsame/test.mv.db [1.4.187/7]" [50000-187]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:368)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:351)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2782)
+	at org.h2.mvstore.db.MVTableEngine$Store.<init>(MVTableEngine.java:162)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:98)
+	at org.h2.engine.Database.getPageStore(Database.java:2389)
+	at org.h2.engine.Database.open(Database.java:669)
+	at org.h2.engine.Database.openDatabase(Database.java:266)
+	at org.h2.engine.Database.<init>(Database.java:260)
+	at org.h2.engine.Engine.openSession(Engine.java:60)
+	at org.h2.engine.Engine.openSession(Engine.java:167)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:145)
+	at org.h2.engine.Engine.createSession(Engine.java:128)
+	at org.h2.engine.Engine.createSession(Engine.java:26)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:347)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:108)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:92)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at dao.H2ConnectionFactory.createConnection(H2ConnectionFactory.java:14)
+	at dao.DBManager.getConnection(DBManager.java:15)
+	at dao.Terapia_Dao.readall(Terapia_Dao.java:125)
+	at core.terapie.GestoreTerapie.VisualizzaListaTerapie(GestoreTerapie.java:53)
+	at ui.UIPersonale.VisualizzaListaTerapie(UIPersonale.java:28)
+	at main.main(main.java:7)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.IllegalStateException: The file is locked: nio:C:/Users/ilaria/git/ProgettoEsame/ProgettoEsame/test.mv.db [1.4.187/7]" [50000-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 29 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/ilaria/git/ProgettoEsame/ProgettoEsame/test.mv.db [1.4.187/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:773)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:337)
+	... 24 more
+02-17 23:44:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "CODFPaziente" not found [42122-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3120)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3208)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:302)
+	at dao.Paziente_Dao.read(Paziente_Dao.java:59)
+	at dao.Terapia_Dao.readall(Terapia_Dao.java:131)
+	at core.terapie.GestoreTerapie.VisualizzaListaTerapie(GestoreTerapie.java:53)
+	at ui.UIPersonale.VisualizzaListaTerapie(UIPersonale.java:28)
+	at main.main(main.java:7)
+02-17 23:46:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "CODFPaziente" not found [42122-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3120)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3208)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:302)
+	at dao.Paziente_Dao.read(Paziente_Dao.java:59)
+	at dao.Terapia_Dao.readall(Terapia_Dao.java:131)
+	at core.terapie.GestoreTerapie.VisualizzaListaTerapie(GestoreTerapie.java:53)
+	at ui.UIPersonale.VisualizzaListaTerapie(UIPersonale.java:28)
+	at main.main(main.java:7)
+02-17 23:48:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "CODF" not found [42122-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3120)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3208)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:302)
+	at dao.Terapia_Dao.readall(Terapia_Dao.java:136)
+	at core.terapie.GestoreTerapie.VisualizzaListaTerapie(GestoreTerapie.java:53)
+	at ui.UIPersonale.VisualizzaListaTerapie(UIPersonale.java:28)
+	at main.main(main.java:7)
+02-17 23:48:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "CODF" not found [42122-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3120)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3208)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:302)
+	at dao.Terapia_Dao.readall(Terapia_Dao.java:136)
+	at core.terapie.GestoreTerapie.VisualizzaListaTerapie(GestoreTerapie.java:53)
+	at ui.UIPersonale.VisualizzaListaTerapie(UIPersonale.java:28)
+	at main.main(main.java:7)
+02-17 23:50:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "INFERMIERE_CODF" not found [42122-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3120)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3208)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:302)
+	at dao.Terapia_Dao.readall(Terapia_Dao.java:136)
+	at core.terapie.GestoreTerapie.VisualizzaListaTerapie(GestoreTerapie.java:53)
+	at ui.UIPersonale.VisualizzaListaTerapie(UIPersonale.java:28)
+	at main.main(main.java:7)
+02-17 23:51:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "CODFInfermiere" not found [42122-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3120)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3208)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:302)
+	at dao.Infermiere_Dao.read(Infermiere_Dao.java:60)
+	at dao.Terapia_Dao.readall(Terapia_Dao.java:136)
+	at core.terapie.GestoreTerapie.VisualizzaListaTerapie(GestoreTerapie.java:53)
+	at ui.UIPersonale.VisualizzaListaTerapie(UIPersonale.java:28)
+	at main.main(main.java:7)

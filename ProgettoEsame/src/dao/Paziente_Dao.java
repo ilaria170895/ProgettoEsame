@@ -56,7 +56,7 @@ public class Paziente_Dao {
 		ResultSet rs= preparedStatement.executeQuery();
 		if(rs.first()){
 			if (!rs.wasNull()){
-					paziente=new Paziente(rs.getString("CODFPaziente"),rs.getString("Nome"),
+					paziente=new Paziente(rs.getString("CODF"),rs.getString("Nome"),
 							rs.getString("Cognome"),rs.getString("Domicilio"));
 				restoredObjects.put(CODFPaziente, paziente);
 			}
