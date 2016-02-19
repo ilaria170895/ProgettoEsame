@@ -1,6 +1,7 @@
 package core.terapie;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
 
 import core.infermieri.Infermiere;
 import core.paziente.Paziente;
@@ -17,13 +18,13 @@ public class Terapia {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
+		if (this.getClass() != obj.getClass())
 			return false;
-		Terapia other = (Terapia) obj;
-		if (ID_Terapia == null) {
+		Terapia other = (Terapia) obj;//cast dell'oggetto a terapia
+		if (this.ID_Terapia == null) {
 			if (other.ID_Terapia != null)
 				return false;
-		} else if (!ID_Terapia.equals(other.ID_Terapia))
+		} else if (!this.ID_Terapia.equals(other.ID_Terapia))
 			return false;
 		return true;
 	}
@@ -78,7 +79,7 @@ public class Terapia {
 
 	public Terapia(Integer Id,String descrizione, Date dataInizio, Date dataFine, Paziente paziente,
 			ArrayList<Infermiere> infermieri) {
-		super();
+		
 		this.ID_Terapia=Id;
 		this.Descrizione = descrizione;
 		this.DataInizio = dataInizio;
@@ -87,14 +88,14 @@ public class Terapia {
 		this.infermieri = infermieri;
 	}
     public Terapia(Integer Id,String De, Date DI, Date DF, Infermiere I, Paziente P) {
-    	super();
+    	
     	this.ID_Terapia=Id;
 		this.Descrizione = De;
 		this.DataInizio = DI;
 		this.DataFine = DF;
 		this.paziente = P;
 		this.infermieri=new ArrayList<Infermiere>();
-		this.infermieri.add(I);
+		this.aggiungiInfermiere(I);
     }
     public Terapia(Integer Id,String De, Date DI, Date DF, Paziente P) {
     	super();

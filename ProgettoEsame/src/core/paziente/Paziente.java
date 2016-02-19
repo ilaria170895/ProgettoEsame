@@ -1,9 +1,5 @@
 package core.paziente;
 
-import java.util.*;
-
-import core.infermieri.Infermiere;
-
 /**
  * 
  */
@@ -26,7 +22,9 @@ public class Paziente {
 		return true;
 	}
 
-
+ 	public String getGeneralita(){
+ 			return new String("Paziente Nome: "+this.getNome()+" Cognome: "+this.getCognome());
+ 	}
 
 	public String getNome() {
 		return Nome;

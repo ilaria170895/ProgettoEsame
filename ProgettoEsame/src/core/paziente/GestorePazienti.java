@@ -1,7 +1,5 @@
 package core.paziente;
 
-import java.util.*;
-
 /**
  * 
  */
@@ -31,10 +29,6 @@ public class GestorePazienti implements IGestorePazienti {
         // TODO implement here
     }
 
-	@Override
-	public void VisualizzaGeneralitaPaziente(Paziente p) {
-		System.out.println("Paziente Nome: "+p.getNome()+" Cognome: "+p.getCognome());
-	}
 
 	@Override
 	public void InserisciDatiPaziente(Paziente p) {

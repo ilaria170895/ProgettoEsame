@@ -1,6 +1,8 @@
 package core.terapie;
 
-import java.util.*;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Date;
 
 import core.exception.InfermiereNotFound;
 import core.exception.PazienteNotFound;
@@ -18,8 +20,9 @@ public interface IGestoreTerapie {
      * @throws InfermiereNotFound 
      * @throws PazienteNotFound 
      * @throws TerapiaNotFound 
+     * @throws ParseException 
      */
-    public ArrayList<Terapia> VisualizzaListaTerapie(Date di, Date df) throws TerapiaNotFound, PazienteNotFound, InfermiereNotFound;
+    public ArrayList<Terapia> VisualizzaListaTerapie(Date di, Date df) throws TerapiaNotFound, PazienteNotFound, InfermiereNotFound, ParseException;
 
     /**
      * @param t
